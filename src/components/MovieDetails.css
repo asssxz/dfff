@@ -1,0 +1,301 @@
+/* Movie Details Styling */
+.movie-details {
+  font-family: Arial, sans-serif;
+  padding: 30px;
+  color: white;
+}
+
+.movie-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.movie-poster {
+  flex: 1;
+  max-width: 50%;
+}
+
+.poster-image {
+  width: 100%;
+  height: 450px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.movie-info {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.movie-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.rating {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.release-date {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.movie-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.watch-btn,
+.download-btn {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 40%;
+}
+
+.watch-btn {
+  background-color: #ff9700;
+  color: white;
+}
+
+.download-btn {
+  background-color: #333;
+  color: white;
+}
+
+.watch-btn:hover,
+.download-btn:hover {
+  opacity: 0.8;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  background-color: #fff;
+  color: #333;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 30%;
+}
+
+.tab-btn.active {
+  background-color: #ff9700;
+  color: white;
+  font-weight: bold;
+}
+
+.tab-btn:hover {
+  background-color: #f4f4f4;
+}
+
+.tab-content {
+  padding: 20px;
+  border-top: 2px solid #ccc;
+}
+
+.overview,
+.cast,
+.related {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #555;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.overview h3,
+.cast h3,
+.related h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.actor-image,
+.related-movie-image {
+  width: 80px;
+  height: 120px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.cast ul,
+.related ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cast li,
+.related li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cast li span,
+.related li span {
+  margin-left: 10px;
+  font-size: 1.1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .movie-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movie-poster {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .poster-image {
+    height: 350px; /* Reduce height on smaller screens */
+  }
+
+  .movie-info {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .movie-title {
+    font-size: 2rem;
+  }
+
+  .rating {
+    font-size: 1.3rem;
+  }
+
+  .release-date {
+    font-size: 1rem;
+  }
+
+  .movie-actions {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .watch-btn,
+  .download-btn {
+    width: 100%; /* Full width buttons on small screens */
+  }
+
+  .tabs {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tab-btn {
+    width: 100%; /* Tab buttons take full width */
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .overview,
+  .cast,
+  .related {
+    width: 100%; /* Full width sections on smaller screens */
+  }
+
+  .overview-message {
+    font-size: 14px;
+  }
+
+  .actor-image,
+  .related-movie-image {
+    width: 60px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movie-poster {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .poster-image {
+    height: 300px; /* Further reduce poster size on very small screens */
+  }
+
+  .movie-info {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .movie-title {
+    font-size: 1.8rem;
+  }
+
+  .rating,
+  .release-date {
+    font-size: 1rem;
+  }
+
+  .movie-actions {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .watch-btn,
+  .download-btn {
+    width: 100%; /* Full width on very small screens */
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+
+  .tabs {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .tab-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  .overview,
+  .cast,
+  .related {
+    width: 100%; /* Full width for sections */
+  }
+
+  .overview-message {
+    font-size: 12px; /* Reduce font size */
+  }
+
+  .actor-image,
+  .related-movie-image {
+    width: 50px;
+    height: 75px;
+  }
+}

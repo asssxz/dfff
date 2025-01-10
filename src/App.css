@@ -1,0 +1,272 @@
+/* General layout */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  position: relative;
+  transition: background-color 0.3s ease;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Video background */
+.video-background,
+.image-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.background-video,
+.background-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Search bar and other content */
+.search-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  z-index: 1;
+  background: rgba(206, 202, 192, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-bar input[type="search"] {
+  padding: 12px 16px;
+  font-size: 16px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  outline: none;
+  width: 250px;
+  max-width: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-bar input[type="search"]:focus {
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.category-dropdown,
+.sort-dropdown,
+.search-button {
+  padding: 12px 16px;
+  font-size: 16px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-button {
+  background-color: #8b7f67;
+  color: white;
+  border: none;
+}
+
+.search-button:hover {
+  background-color: #8795a3;
+}
+
+.search-container .dropdown-container {
+  display: flex;
+  gap: 15px;
+}
+
+/* Movie list styles */
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.movie-card {
+  background-color:  rgba(206, 202, 192, 0.9);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #555;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .dropdown-container {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .search-bar input[type="search"],
+  .category-dropdown,
+  .sort-dropdown,
+  .search-button {
+    width: 100%;
+  }
+
+  .movie-list {
+    padding: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .movie-card {
+    padding: 10px;
+  }
+
+  .movie-card img {
+    height: 250px; /* Adjust image height for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .search-container {
+    padding: 10px;
+    gap: 5px;
+  }
+
+  .movie-list {
+    padding: 10px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .movie-card {
+    padding: 8px;
+  }
+
+  .movie-card img {
+    height: 200px; /* Further reduce image height for very small screens */
+  }
+
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+    padding: 8px 16px;
+  }
+
+  .search-bar input[type="search"] {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .category-dropdown,
+  .sort-dropdown {
+    padding: 10px 14px;
+  }
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.theme-icon {
+  width: 30px;
+  height: 30px;
+  color: #f4f4f4; /* Adjust the color if necessary */
+}
+
+/* Additional styles for icons when active, if needed */
+.theme-toggle:hover .theme-icon {
+  opacity: 0.8;
+}
+
+/* Overlay for the splash screen */
+.splash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 1); /* Black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Always on top */
+}
+
+/* Bold and animated text */
+.splash-title {
+  font-size: 8rem;
+  font-weight: bold;
+  color: Red;
+  animation: fadeOut 5s ease-in-out forwards; /* Fade out in 2 seconds */
+}
+
+/* Fade-out animation */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
